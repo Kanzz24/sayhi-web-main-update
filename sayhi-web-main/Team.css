@@ -1,0 +1,274 @@
+/* Container หลักของหน้า Team */
+.team-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 5%;
+  min-height: 80vh;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+/* Hero Slider Section */
+.team-hero-slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.slider-content {
+  flex-grow: 1;
+  display: flex;
+  background: linear-gradient(135deg, #4da0ff 0%, #aae4ff 100%);
+  border-radius: 40px;
+  padding: 30px 50px;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin: 0 15px;
+}
+
+.slider-image-placeholder {
+  width: 150px;
+  height: 200px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+}
+
+.slider-info {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.hero-nickname {
+  font-size: 48px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.hero-fullname, .hero-role {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.more-btn {
+  margin-top: 15px;
+  background: rgba(255,255,255,0.3);
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 8px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+
+.more-btn:hover {
+  background: #fff;
+  color: #0056b3;
+}
+
+.slider-arrow {
+  background: none;
+  border: none;
+  font-size: 40px;
+  color: #0056b3;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.slider-arrow:hover {
+  opacity: 1;
+}
+
+/* See All Member */
+.see-all-indicator {
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.see-all-text {
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 2px solid;
+  padding-bottom: 2px;
+}
+
+.down-arrow-icon {
+  font-size: 30px;
+  color: #0056b3;
+  margin-top: -5px;
+}
+
+/* View Toggle */
+.view-toggle-container {
+  display: flex;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #0056b3;
+  padding-bottom: 10px;
+}
+
+.toggle-bg {
+  background: #0056b3;
+  border-radius: 20px;
+  padding: 5px;
+  display: inline-flex;
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 20px;
+  padding: 2px 15px;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.toggle-btn.active {
+  background: #fff;
+  color: #0056b3;
+}
+
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+/* เปลี่ยน Layout เป็นแนวตั้งเมื่อกดปุ่ม List */
+.team-grid.list-view {
+  grid-template-columns: 1fr;
+}
+.team-grid.list-view .team-card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.team-grid.list-view .card-img-placeholder {
+  width: 150px;
+  height: 150px;
+}
+
+/* Team Card */
+.team-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.card-img-placeholder::before, .card-img-placeholder::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #ccc;
+}
+
+.card-img-placeholder::before {
+  transform: rotate(50deg);
+}
+
+.card-img-placeholder::after {
+  transform: rotate(-50deg);
+}
+
+.x-mark {
+  background: #fff;
+  padding: 10px;
+  z-index: 1;
+}
+
+.card-info {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.member-nickname {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.member-fullname, .member-role {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slider-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .slider-arrow {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------
+   DARK MODE STYLES FOR TEAM PAGE (ใช้ชุดสีเดิมของเว็บ)
+-------------------------------------------------- */
+body.dark-mode {
+  background-color: #0f172a; /* สีพื้นหลังมืดเดิม */
+  color: #f8fafc; /* สีฟอนต์สว่างเดิม */
+}
+
+/* ปรับแต่งการแสดงผลการ์ดทีมในโหมดมืด */
+body.dark-mode .team-card {
+  color: #f8fafc;
+}
+
+body.dark-mode .card-img-placeholder {
+  border-color: #334155;
+  background-color: #1e293b;
+}
+
+body.dark-mode .card-img-placeholder::before,
+body.dark-mode .card-img-placeholder::after {
+  background: #334155;
+}
+
+body.dark-mode .x-mark {
+  background: #1e293b;
+  color: #94a3b8;
+}
+
+body.dark-mode .card-info {
+  border-bottom-color: #334155;
+}
+
+body.dark-mode .see-all-text {
+  border-bottom-color: #f8fafc;
+}
